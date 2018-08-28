@@ -1,0 +1,30 @@
+# import Post from "./generated/prisma.graphql"
+# import Bid from "./generated/prisma.graphql"
+# import Job from "./generated/prisma.graphql"
+
+type Query {
+#  Not needed for my app
+#  feed: [Post!]!
+#  drafts: [Post!]!
+#  post(id: ID!): Post
+  bids: [Bid!]!
+  bid(id: ID!): Bid
+  job(id: ID!): Job
+  jobs: [Job!]!
+}
+
+type Mutation {
+#  Not needed for my app.
+#  createDraft(title: String!, text: String): Post
+#  deletePost(id: ID!): Post
+#  publish(id: ID!): Post
+
+ # Bids
+  makeBid(price: Int!, comment: String!, company: String!): Bid
+  deleteBid(id:ID!):Bid
+
+  # Jobs
+  postJob(title:String!, description: String!, user: String!): Job
+  editJob(id:ID!, title:String, description:String): Job
+  deleteJob(id:ID!): Job
+}

@@ -1,0 +1,24 @@
+
+type Bid {
+  id: ID! @unique
+  comment: String!
+  company: String!
+  price: Int!
+
+}
+type Job {
+  id: ID! @unique
+  title: String!
+  description: String!
+  user: String!
+
+}
+#type User {
+#    id:ID! @unique
+#    firstName: String!
+#    lastName: String!
+#    isCompany: Boolean! @default(value: false)
+#    bids: [Bid!]!
+#    jobs: [Job!]!
+#
+#}
