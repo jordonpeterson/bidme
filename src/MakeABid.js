@@ -14,13 +14,13 @@ class MakeABid extends Component {
 
                 <Mutation
                     mutation={MAKE_BID_MUTATION}
-                    update={(cache, { data }) => {
-                        const { drafts } = cache.readQuery({ query: BIDS_QUERY })
-                        cache.writeQuery({
-                            query: BIDS_QUERY,
-                            data: { drafts: drafts.concat([data.makeBid]) },
-                        })
-                    }}
+                    // update={(cache, { data }) => {
+                    //     const { drafts } = cache.readQuery({ query: BIDS_QUERY })
+                    //     cache.writeQuery({
+                    //         query: BIDS_QUERY,
+                    //         data: { drafts: drafts.concat([data.makeBid]) },
+                    //     })
+                    // }}
                     //Study update and add it in later.
                     //How can I make the page auto-update1
                 >
@@ -34,6 +34,7 @@ class MakeABid extends Component {
                                         await makeBid({
                                             variables: { company, comment, price },
                                         })
+                                        window.location.reload();
                                         //     this.props.history.replace('/drafts') //What does this line do?
                                         // I should make the comment on bid optional. Right now the submit button won't work
                                         //unless it is filled in.
@@ -90,7 +91,7 @@ class MakeABid extends Component {
 
 const MAKE_BID_MUTATION = gql`
     mutation MakeBidMutation($company: String!, $comment: String!, $price: String!) {
-        postJob(company: $company, comment: $comment, price: $price) {
+        makeBid(company: $company, comment: $comment, price: $price) {
             id
             company
             comment

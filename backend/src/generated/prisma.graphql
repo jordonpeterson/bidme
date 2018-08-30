@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/public-firdiver-396/backend/dev
-# timestamp: Tue Aug 28 2018 10:53:22 GMT-0600 (Mountain Daylight Time)
+# timestamp: Wed Aug 29 2018 10:49:41 GMT-0600 (Mountain Daylight Time)
 
 type AggregateBid {
   count: Int!
@@ -18,7 +18,7 @@ type Bid implements Node {
   id: ID!
   comment: String!
   company: String!
-  price: Int!
+  price: String!
 }
 
 """A connection to a list of items."""
@@ -34,7 +34,7 @@ type BidConnection {
 input BidCreateInput {
   comment: String!
   company: String!
-  price: Int!
+  price: String!
 }
 
 """An edge in a connection."""
@@ -65,7 +65,7 @@ type BidPreviousValues {
   id: ID!
   comment: String!
   company: String!
-  price: Int!
+  price: String!
 }
 
 type BidSubscriptionPayload {
@@ -110,7 +110,7 @@ input BidSubscriptionWhereInput {
 input BidUpdateInput {
   comment: String
   company: String
-  price: Int
+  price: String
 }
 
 input BidWhereInput {
@@ -242,28 +242,46 @@ input BidWhereInput {
 
   """All values not ending with the given string."""
   company_not_ends_with: String
-  price: Int
+  price: String
 
   """All values that are not equal to given value."""
-  price_not: Int
+  price_not: String
 
   """All values that are contained in given list."""
-  price_in: [Int!]
+  price_in: [String!]
 
   """All values that are not contained in given list."""
-  price_not_in: [Int!]
+  price_not_in: [String!]
 
   """All values less than the given value."""
-  price_lt: Int
+  price_lt: String
 
   """All values less than or equal the given value."""
-  price_lte: Int
+  price_lte: String
 
   """All values greater than the given value."""
-  price_gt: Int
+  price_gt: String
 
   """All values greater than or equal the given value."""
-  price_gte: Int
+  price_gte: String
+
+  """All values containing the given string."""
+  price_contains: String
+
+  """All values not containing the given string."""
+  price_not_contains: String
+
+  """All values starting with the given string."""
+  price_starts_with: String
+
+  """All values not starting with the given string."""
+  price_not_starts_with: String
+
+  """All values ending with the given string."""
+  price_ends_with: String
+
+  """All values not ending with the given string."""
+  price_not_ends_with: String
 }
 
 input BidWhereUniqueInput {

@@ -27,6 +27,7 @@ class PostAJob extends Component {
                                         await postJob({
                                             variables: { title, description, user },
                                         })
+                                        window.location.reload();
                                    //     this.props.history.replace('/drafts') //What does this line do?
                                     }}
                                 >
@@ -83,7 +84,7 @@ const POST_JOB_MUTATION = gql`
             id
             title
             description
-            user
+            usergit 
         }
     }
 `

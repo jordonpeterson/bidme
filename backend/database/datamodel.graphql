@@ -3,7 +3,7 @@ type Bid {
   id: ID! @unique
   comment: String!
   company: String!
-  price: Int!
+  price: String!
 
 }
 type Job {
