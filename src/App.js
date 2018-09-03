@@ -3,6 +3,7 @@ import PostAJob from './PostAJob'
 import JobsFeed from './JobsFeed'
 import BidsFeed from './BidsFeed'
 import MakeABid from './MakeABid'
+import BidContainer from './BidContainer'
 
 
 class App extends Component {
@@ -11,10 +12,14 @@ class App extends Component {
     return (
       <Fragment>
           <h1>Bidme</h1>
-          <PostAJob/>
-          <JobsFeed/>
-          <BidsFeed/>
-          <MakeABid/>
+          <BidContainer />
+
+
+
+          {/*<PostAJob/>*/}
+          {/*<JobsFeed/>*/}
+          {/*<BidsFeed/>*/}
+          {/*<MakeABid/>*/}
 
       </Fragment>
     );
